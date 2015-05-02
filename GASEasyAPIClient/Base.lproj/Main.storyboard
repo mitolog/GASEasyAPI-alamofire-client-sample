@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GASEasyAPIClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +15,67 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6f-2y-GFT">
+                                <rect key="frame" x="266" y="192" width="68" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="hdF-7u-qSy"/>
+                                    <constraint firstAttribute="width" constant="68" id="oHO-kc-T0b"/>
+                                </constraints>
+                                <state key="normal" title="GET">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQE-lN-Bnu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vS5-eX-182">
+                                <rect key="frame" x="266" y="277" width="68" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="YOq-uu-DGr"/>
+                                    <constraint firstAttribute="height" constant="45" id="bWt-ei-xrP"/>
+                                </constraints>
+                                <state key="normal" title="POST">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="postBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4lM-Wq-Iao"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOK-uq-0Xj">
+                                <rect key="frame" x="16" y="20" width="568" height="61"/>
+                                <string key="text">1. Set gas publish url at ViewController.swift
+2. Press Get or Post button. Result json will appear in textvire below and log pane in Xcode.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Get/Post Log Will be plotted below" translatesAutoresizingMaskIntoConstraints="NO" id="Wdx-br-szU">
+                                <rect key="frame" x="0.0" y="358" width="600" height="242"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Wdx-br-szU" secondAttribute="trailing" id="42e-Kv-Stu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wdx-br-szU" secondAttribute="bottom" id="7Yw-TY-4Zm"/>
+                            <constraint firstItem="vS5-eX-182" firstAttribute="top" secondItem="b6f-2y-GFT" secondAttribute="bottom" constant="40" id="EVn-2i-11L"/>
+                            <constraint firstAttribute="trailing" secondItem="aOK-uq-0Xj" secondAttribute="trailing" constant="16" id="GTt-De-SVy"/>
+                            <constraint firstItem="Wdx-br-szU" firstAttribute="top" secondItem="vS5-eX-182" secondAttribute="bottom" constant="36" id="Puy-aS-g8k"/>
+                            <constraint firstAttribute="centerX" secondItem="b6f-2y-GFT" secondAttribute="centerX" id="VpP-SW-Os3"/>
+                            <constraint firstAttribute="centerX" secondItem="vS5-eX-182" secondAttribute="centerX" id="XxS-bc-F55"/>
+                            <constraint firstAttribute="centerX" secondItem="aOK-uq-0Xj" secondAttribute="centerX" id="aU8-af-IE4"/>
+                            <constraint firstItem="Wdx-br-szU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="coY-h5-bul"/>
+                            <constraint firstItem="aOK-uq-0Xj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pTl-MA-MY3"/>
+                            <constraint firstAttribute="centerY" secondItem="vS5-eX-182" secondAttribute="centerY" id="rqO-sf-AIr"/>
+                            <constraint firstItem="aOK-uq-0Xj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="yHY-YR-II7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logTextView" destination="Wdx-br-szU" id="UyK-BR-ytF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
